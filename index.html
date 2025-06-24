@@ -1,0 +1,88 @@
+<!--COMPLETE HTML TEXT EDITOR-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="texteditor.css">
+    <link rel="stylesheet" href="animate.css">
+    <script>
+        function changeees(){
+                var result = document.getElementById("fieldset_result");
+                result.style.display="block";
+                result.setAttribute("class","animate__animated animate__slideInUp");
+                var code_div = document.getElementById("fieldset");
+                code_div.style.display="none";
+                var run_btn = document.getElementById("run_code");
+                run_btn.style.display="none";
+                var txtarea_value = document.getElementById("textarea").value;
+                var result_div = document.getElementById("result_div");
+                result_div.innerHTML = txtarea_value;
+                var return_code = document.getElementById("Return_btn");
+            return_code.style.display="block";
+        }
+
+        function returnsa(){
+            var return_code = document.getElementById("Return_btn");
+            return_code.style.display="none";
+            var result = document.getElementById("fieldset_result");
+                result.style.display="none";
+            var code_div = document.getElementById("fieldset");
+                code_div.style.display="block";
+                code_div.setAttribute("class","animate__animated animate__slideInDown");
+            var run_btn = document.getElementById("run_code");
+                run_btn.style.display="block";
+        }
+    </script>
+</head>
+<body>
+    <div id="row">
+        <header class="header">
+            <p style="color: white;font-size: 30px;font-weight: bold;font-family: sans-serif;" align="center">STP Text Editor Ver. 1.0.0</p>
+        </header>
+    </div>
+    <!--CODE WRITTEN FIELDSET IS START NOW-->
+    <!--CODE WRITTEN FIELDSET IS START NOW-->
+    <fieldset id="fieldset" class="fieldset_code">
+        <legend id="legend">
+            TYPE YOUR CODE HERE
+        </legend>
+         <!--TEXT AREA START-->
+        <textarea name="textarea" id="textarea" cols="30" rows="10">
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+<body>
+                
+</body>
+</html>
+
+
+        </textarea>
+        <!--TEXT AREA END -->
+    </fieldset>
+
+    <div id="row" class="btn_div"> <button id="run_code" onclick="changeees()">Run Code !</button></div>
+    <!--CODE WRITTEN FIELDSET IS END NOW-->
+
+
+
+    <!--CODE RESULT FIELDSET IS START NOW-->
+    <!--CODE RESULT FIELDSET IS START NOW-->
+    <fieldset id="fieldset_result">
+        <legend id="legend">
+            YOUR CODE RESULT
+        </legend>
+       <div id="result_div"></div>
+    </fieldset>
+    <!--CODE RESULT FIELDSET IS END NOW-->
+    <div id="row" class="btn_div"><button id="Return_btn" onclick="returnsa()">Return to Code ! </button></div>
+
+   
+</body>
+</html>
